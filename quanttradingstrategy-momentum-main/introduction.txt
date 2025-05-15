@@ -1,0 +1,26 @@
+Welcome to Multi-Strategy Quant Systems from Scratch (with Python Code), a First Course in Algorithmic Trading by HangukQuant.
+
+I am the author of the HangukQuant Newsletter; Mathematics Finance and Their Babies, the second highest rated Newsletter on Substack with regards to quant trading.
+I'm an equity L/S PM with multiple years of experience in quant research teams of established funds, and have published papers in both quantum finance and quantitative finance w.r.t. credit risk.
+
+My formal education is in Computer Science.
+
+This project is a stream-course where I record the process of implementing a full end-to-end Algorithmic Trading System in Python from scratch.
+
+It is not intended to be an introductory course in Python or Statistics, hence students are expected to be equipped with knowledge in programming methodology as well as sufficient
+quantitative literacy. The course is of intermediate-advanced level, and most programming will not have supplementary notes; students are expected to be able to comprehend
+thousands of lines of code and understand documentation without prompting.
+
+Learning material will be added to the course as the course and cohort size develops, and while the main stream will be just a documentation of a recording, educational material
+may be supplemented as we progress.
+
+The target audience is to alleviate a supply shortage in a missing market with regards to advanced programming courses on trading systems: most trading courses are data-sciencey
+courses teaching both Python and trading basics, manipulation of dataframes, calculations of indicators et cetera. There is little guidance on how to perform this in an integrated, unified framework
+that is robust to extension and adaptation.
+
+Tech Stack:
+Python
+
+There is no tech stack! The code will be modular enough such that components can be switched out of and replaced based on your own proficiency. This is an implementation of a shoestring system,
+complete with risk management and sound frameworks on algorithmic trading, and not a lecture on technologies for trading.
+
