@@ -1,0 +1,101 @@
+backtest:
+  initial_capital: 10000
+  trading_days: 252
+  start_date: null
+  end_date: null
+  use_adjusted_close: true
+  allow_missing_data: true
+strategy:
+  name: high_growth_stock_momentum_v3
+  benchmark: SPY
+  formation_lookback: 252
+  skip_recent_days: 21
+  nine_month_lookback: 189
+  six_month_lookback: 126
+  intermediate_start: 252
+  intermediate_end: 126
+  short_lookback: 63
+  reversal_lookback: 21
+  residual_beta_lookback: 252
+  component_weights:
+    momentum_12_1: 0.20
+    intermediate_12_7: 0.12
+    momentum_9_1: 0.10
+    momentum_6_1: 0.12
+    residual_12_1: 0.13
+    relative_strength_12_1: 0.13
+    information_ratio_6_1: 0.08
+    time_series_3m: 0.05
+    trend_strength_200: 0.04
+    breakout_252: 0.03
+    downside_quality: 0.01
+    low_volatility_quality: 0.00
+    return_consistency: 0.01
+    short_reversal_1m: 0.00
+  long_short: true
+  top_quantile: 0.45
+  bottom_quantile: 0.10
+  score_method: zscore
+  zscore_clip: 3.0
+  signal_clip: 1.0
+  sector_neutralize: false
+  cross_sectional_demean: false
+  trend_filter:
+    enabled: true
+    fast_ma: 50
+    slow_ma: 200
+    disagreement_multiplier: 0.30
+    agreement_multiplier: 1.15
+  liquidity_filter:
+    enabled: true
+    min_price: 5.0
+    volume_lookback: 20
+    min_average_volume: 100000
+    allow_zero_volume_for_large_caps: true
+portfolio:
+  mode: adaptive_core_satellite
+  target_vol: 0.20
+  vol_lookback: 63
+  cov_lookback: 126
+  covariance_shrinkage: 0.65
+  max_gross_leverage: 1.35
+  max_net_exposure: 1.20
+  max_weight_per_stock: 0.10
+  max_sector_weight: 0.52
+  min_abs_weight: 0.0015
+  rebalance_frequency: ME
+  turnover_aversion: 0.08
+  beta_neutral_lookback: 126
+  core_weight: 0.76
+  diversified_weight: 0.22
+  satellite_weight: 0.02
+  satellite_beta_neutral: true
+  adaptive_risk_budget: true
+  min_names_for_diversified_sleeve: 8
+  market_regime_filter:
+    enabled: true
+    benchmark: SPY
+    sma: 200
+    risk_on_gross_multiplier: 1.18
+    risk_on_low_vol_threshold: 0.24
+    risk_off_gross_multiplier: 0.50
+    high_vol_lookback: 63
+    high_vol_threshold: 0.32
+    high_vol_multiplier: 0.75
+    panic_lookback: 63
+    panic_drawdown_threshold: -0.12
+    rebound_lookback: 21
+    rebound_threshold: 0.08
+    panic_rebound_short_multiplier: 0.20
+  drawdown_brake:
+    enabled: true
+    soft_drawdown: -0.16
+    hard_drawdown: -0.27
+    soft_multiplier: 0.80
+    hard_multiplier: 0.40
+execution:
+  commission_bps: 0.50
+  default_half_spread_bps: 1.50
+  slippage_bps: 1.00
+  impact_bps_per_100pct_turnover: 0.25
+  volatility_slippage_multiplier: 0.00

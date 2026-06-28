@@ -1,0 +1,145 @@
+Metadata-Version: 2.4
+Name: quant-stock-momentum-pro
+Version: 0.5.0
+Summary: Research-grade stock momentum backtester with ensemble/residual momentum, adaptive total-return/core-satellite allocation, volatility targeting, crash controls, costs, benchmarks, and walk-forward validation.
+Author: Quant Research Project
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.24
+Requires-Dist: pandas>=2.0
+Requires-Dist: PyYAML>=6.0
+Requires-Dist: matplotlib>=3.7
+Requires-Dist: yfinance>=0.2.40
+Requires-Dist: requests>=2.31
+Requires-Dist: beautifulsoup4>=4.12
+Requires-Dist: lxml>=5.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: ruff>=0.5; extra == "dev"
+
+# Quant Stock Momentum Research Pro v5
+
+A stock-only quantitative research/backtesting system for U.S. equities. It is designed for research and paper signal generation only; it does **not** send live orders.
+
+v5 builds on the previous adaptive total-return engine and adds a more robust broad-market participation sleeve, extra signal features, expanded universe support, and out-of-sample config selection.
+
+## What changed in v5
+
+- Added `adaptive_total_return_v5` portfolio mode.
+- Added 1/N-inspired broad sleeve with optional mild quality/momentum tilt.
+- Added new signal components:
+  - volatility-adjusted 12-1 momentum,
+  - Kaufman-style efficiency/smooth trend ratio,
+  - persistence near 52-week highs,
+  - existing residual, intermediate, breakout, trend, downside-quality, and volatility-contraction signals.
+- Expanded default universe from about 62 symbols to 111 stocks plus SPY benchmark.
+- Added config variants:
+  - `configs/strategy_balanced.yml`
+  - `configs/strategy_growth.yml`
+  - `configs/strategy_sharpe.yml`
+  - `configs/strategy_equal_weight_plus.yml`
+- Added `scripts/run_oos_config_selection.py` for train/validation/test config selection.
+- Updated the strategy suite and parameter-sensitivity scripts to include v5 variants.
+
+## Setup
+
+```cmd
+cd quant_stock_momentum_research_pro_v5
+python -m venv .venv
+.venv\Scripts\activate
+python -m pip install --upgrade pip
+python -m pip install -e .
+```
+
+## Recommended data source: yfinance adjusted stock data
+
+```cmd
+python scripts/download_yfinance_stocks.py --instruments configs/instruments.yml --data-dir data/raw/yfinance --start 2014-01-01 --end 2026-01-01 --include-benchmark --skip-failed
+```
+
+The expanded universe has more symbols, so use `--skip-failed` to avoid one failed ticker stopping the entire download.
+
+## Dukascopy alternative
+
+```cmd
+python scripts/download_dukascopy_stocks.py --instruments configs/instruments.yml --data-dir data/raw/dukascopy --start 2018-01-01 --end 2026-01-01 --timeframe d1 --include-benchmark --skip-failed
+```
+
+Dukascopy stock CFDs may have zero or unreliable volume. The code handles this, but adjusted equity data is still better for stock research.
+
+## Diagnose data
+
+```cmd
+python scripts/diagnose_data.py --data-dir data/raw/yfinance --instruments configs/instruments.yml --out data/reports/data_quality.csv --allow-missing
+```
+
+## Run the v5 default backtest
+
+```cmd
+python scripts/run_backtest.py --data-dir data/raw/yfinance --instruments configs/instruments.yml --strategy configs/strategy.yml --out data/reports/pro_v5_default --allow-missing
+```
+
+## Compare all strategy variants
+
+```cmd
+python scripts/run_strategy_suite.py --data-dir data/raw/yfinance --instruments configs/instruments.yml --out data/reports/strategy_suite_v5 --allow-missing
+```
+
+Review:
+
+```text
+data/reports/strategy_suite_v5/strategy_suite_summary.csv
+```
+
+## Walk-forward validation
+
+```cmd
+python scripts/run_walk_forward.py --data-dir data/raw/yfinance --instruments configs/instruments.yml --strategy configs/strategy.yml --out data/reports/walk_forward_v5 --allow-missing
+```
+
+## Out-of-sample config selection
+
+This script compares the predefined v3/v4/v5 configs, selects using validation-period robust score, then reports test-period and full-period results.
+
+```cmd
+python scripts/run_oos_config_selection.py --data-dir data/raw/yfinance --instruments configs/instruments.yml --out data/reports/oos_config_selection_v5 --allow-missing
+```
+
+Default split:
+
+```text
+train:       2014-01-01 to 2018-12-31
+validation:  2019-01-01 to 2021-12-31
+test:        2022-01-01 onward
+```
+
+## Cost stress
+
+```cmd
+python scripts/run_cost_stress.py --data-dir data/raw/yfinance --instruments configs/instruments.yml --strategy configs/strategy.yml --out data/reports/cost_stress_v5 --allow-missing
+```
+
+## Parameter sensitivity
+
+```cmd
+python scripts/run_parameter_sensitivity.py --data-dir data/raw/yfinance --instruments configs/instruments.yml --strategy configs/strategy.yml --out data/reports/parameter_sensitivity_v5.csv --allow-missing
+```
+
+## Latest research signals
+
+```cmd
+python scripts/generate_signals.py --data-dir data/raw/yfinance --instruments configs/instruments.yml --strategy configs/strategy.yml --out data/reports/latest_stock_signals_v5.csv --allow-missing
+```
+
+## Important interpretation
+
+Do not judge the system only by the full-period backtest. A stronger result is one where:
+
+- the strategy beats SPY and equal-weight over the full period,
+- the walk-forward test remains positive,
+- cost-stress results are still acceptable,
+- no single sector dominates the latest signals,
+- max drawdown remains inside your risk tolerance,
+- the best config is not selected only because of one lucky period.
+
+v5 is designed to improve robustness, participation, and validation. It cannot guarantee future profits.

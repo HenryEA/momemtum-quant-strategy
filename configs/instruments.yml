@@ -1,0 +1,141 @@
+stocks:
+  - {ticker: AAPL,  name: Apple Inc.,                    sector: Information Technology, dukascopy_symbol: aaplususd}
+  - {ticker: MSFT,  name: Microsoft Corporation,         sector: Information Technology, dukascopy_symbol: msftususd}
+  - {ticker: NVDA,  name: NVIDIA Corporation,            sector: Information Technology, dukascopy_symbol: nvdaususd}
+  - {ticker: AVGO,  name: Broadcom Inc.,                 sector: Information Technology, dukascopy_symbol: avgoususd}
+  - {ticker: ORCL,  name: Oracle Corporation,            sector: Information Technology, dukascopy_symbol: orclususd}
+  - {ticker: AMD,   name: Advanced Micro Devices,        sector: Information Technology, dukascopy_symbol: amdususd}
+  - {ticker: QCOM,  name: Qualcomm Inc.,                 sector: Information Technology, dukascopy_symbol: qcomususd}
+  - {ticker: CSCO,  name: Cisco Systems,                 sector: Information Technology, dukascopy_symbol: cscoususd}
+  - {ticker: CRM,   name: Salesforce Inc.,               sector: Information Technology, dukascopy_symbol: crmususd}
+  - {ticker: AMAT,  name: Applied Materials,             sector: Information Technology, dukascopy_symbol: amatususd}
+
+  - {ticker: AMZN,  name: Amazon.com Inc.,               sector: Consumer Discretionary, dukascopy_symbol: amznususd}
+  - {ticker: TSLA,  name: Tesla Inc.,                    sector: Consumer Discretionary, dukascopy_symbol: tslaususd}
+  - {ticker: HD,    name: Home Depot Inc.,               sector: Consumer Discretionary, dukascopy_symbol: hdususd}
+  - {ticker: MCD,   name: McDonald's Corporation,        sector: Consumer Discretionary, dukascopy_symbol: mcdususd}
+  - {ticker: NKE,   name: Nike Inc.,                     sector: Consumer Discretionary, dukascopy_symbol: nkeususd}
+  - {ticker: LOW,   name: Lowe's Companies,              sector: Consumer Discretionary, dukascopy_symbol: lowususd}
+  - {ticker: SBUX,  name: Starbucks Corporation,         sector: Consumer Discretionary, dukascopy_symbol: sbuxususd}
+  - {ticker: BKNG,  name: Booking Holdings,              sector: Consumer Discretionary, dukascopy_symbol: bkngususd}
+
+  - {ticker: META,  name: Meta Platforms Inc.,           sector: Communication Services, dukascopy_symbol: fbususd}
+  - {ticker: GOOGL, name: Alphabet Inc. Class A,         sector: Communication Services, dukascopy_symbol: googlususd}
+  - {ticker: NFLX,  name: Netflix Inc.,                  sector: Communication Services, dukascopy_symbol: nflxususd}
+  - {ticker: DIS,   name: Walt Disney Co.,               sector: Communication Services, dukascopy_symbol: disususd}
+  - {ticker: CMCSA, name: Comcast Corporation,           sector: Communication Services, dukascopy_symbol: cmcsaususd}
+  - {ticker: VZ,    name: Verizon Communications,        sector: Communication Services, dukascopy_symbol: vzususd}
+
+  - {ticker: JPM,   name: JPMorgan Chase & Co.,          sector: Financials, dukascopy_symbol: jpmususd}
+  - {ticker: V,     name: Visa Inc.,                     sector: Financials, dukascopy_symbol: vususd}
+  - {ticker: MA,    name: Mastercard Inc.,               sector: Financials, dukascopy_symbol: maususd}
+  - {ticker: BAC,   name: Bank of America Corporation,   sector: Financials, dukascopy_symbol: bacususd}
+  - {ticker: WFC,   name: Wells Fargo & Co.,             sector: Financials, dukascopy_symbol: wfcususd}
+  - {ticker: GS,    name: Goldman Sachs Group,           sector: Financials, dukascopy_symbol: gsususd}
+  - {ticker: MS,    name: Morgan Stanley,                sector: Financials, dukascopy_symbol: msususd}
+  - {ticker: AXP,   name: American Express,              sector: Financials, dukascopy_symbol: axpususd}
+
+  - {ticker: UNH,   name: UnitedHealth Group,            sector: Health Care, dukascopy_symbol: unhususd}
+  - {ticker: JNJ,   name: Johnson & Johnson,             sector: Health Care, dukascopy_symbol: jnjususd}
+  - {ticker: MRK,   name: Merck & Co.,                   sector: Health Care, dukascopy_symbol: mrkususd}
+  - {ticker: ABBV,  name: AbbVie Inc.,                   sector: Health Care, dukascopy_symbol: abbvususd}
+  - {ticker: ABT,   name: Abbott Laboratories,           sector: Health Care, dukascopy_symbol: abtususd}
+  - {ticker: TMO,   name: Thermo Fisher Scientific,      sector: Health Care, dukascopy_symbol: tmoususd}
+  - {ticker: PFE,   name: Pfizer Inc.,                   sector: Health Care, dukascopy_symbol: pfeususd}
+  - {ticker: LLY,   name: Eli Lilly and Co.,             sector: Health Care, dukascopy_symbol: llyususd}
+
+  - {ticker: XOM,   name: Exxon Mobil Corporation,       sector: Energy, dukascopy_symbol: xomususd}
+  - {ticker: CVX,   name: Chevron Corporation,           sector: Energy, dukascopy_symbol: cvxususd}
+  - {ticker: COP,   name: ConocoPhillips,                sector: Energy, dukascopy_symbol: copususd}
+  - {ticker: SLB,   name: Schlumberger Ltd.,             sector: Energy, dukascopy_symbol: slbususd}
+
+  - {ticker: WMT,   name: Walmart Inc.,                  sector: Consumer Staples, dukascopy_symbol: wmtususd}
+  - {ticker: COST,  name: Costco Wholesale,              sector: Consumer Staples, dukascopy_symbol: costususd}
+  - {ticker: PG,    name: Procter & Gamble,              sector: Consumer Staples, dukascopy_symbol: pgususd}
+  - {ticker: KO,    name: Coca-Cola Co.,                 sector: Consumer Staples, dukascopy_symbol: koususd}
+  - {ticker: PEP,   name: PepsiCo Inc.,                  sector: Consumer Staples, dukascopy_symbol: pepususd}
+  - {ticker: PM,    name: Philip Morris International,   sector: Consumer Staples, dukascopy_symbol: pmususd}
+
+  - {ticker: LIN,   name: Linde plc,                     sector: Materials, dukascopy_symbol: linususd}
+  - {ticker: SHW,   name: Sherwin-Williams,              sector: Materials, dukascopy_symbol: shwususd}
+  - {ticker: APD,   name: Air Products and Chemicals,    sector: Materials, dukascopy_symbol: apdususd}
+
+  - {ticker: CAT,   name: Caterpillar Inc.,              sector: Industrials, dukascopy_symbol: catususd}
+  - {ticker: GE,    name: General Electric,              sector: Industrials, dukascopy_symbol: geususd}
+  - {ticker: RTX,   name: RTX Corporation,               sector: Industrials, dukascopy_symbol: rtxususd}
+  - {ticker: HON,   name: Honeywell International,       sector: Industrials, dukascopy_symbol: honususd}
+  - {ticker: UPS,   name: United Parcel Service,         sector: Industrials, dukascopy_symbol: upsususd}
+
+  - {ticker: PLD,   name: Prologis Inc.,                 sector: Real Estate, dukascopy_symbol: pldususd}
+  - {ticker: AMT,   name: American Tower,                sector: Real Estate, dukascopy_symbol: amtususd}
+
+  - {ticker: NEE,   name: NextEra Energy,                sector: Utilities, dukascopy_symbol: neeususd}
+  - {ticker: DUK,   name: Duke Energy,                   sector: Utilities, dukascopy_symbol: dukususd}
+
+  # v5 extended universe additions. yfinance handles these directly; Dukascopy
+  # symbols are best-effort, so use --skip-failed for Dukascopy downloads.
+  - {ticker: INTU,  name: Intuit Inc.,                    sector: Information Technology, dukascopy_symbol: intuususd}
+  - {ticker: IBM,   name: International Business Machines, sector: Information Technology, dukascopy_symbol: ibmususd}
+  - {ticker: TXN,   name: Texas Instruments,              sector: Information Technology, dukascopy_symbol: txnususd}
+  - {ticker: ADI,   name: Analog Devices,                 sector: Information Technology, dukascopy_symbol: adiususd}
+  - {ticker: MU,    name: Micron Technology,              sector: Information Technology, dukascopy_symbol: muususd}
+  - {ticker: LRCX,  name: Lam Research,                   sector: Information Technology, dukascopy_symbol: lrcxususd}
+  - {ticker: KLAC,  name: KLA Corporation,                sector: Information Technology, dukascopy_symbol: klacususd}
+  - {ticker: NOW,   name: ServiceNow,                     sector: Information Technology, dukascopy_symbol: nowususd}
+  - {ticker: ACN,   name: Accenture plc,                  sector: Information Technology, dukascopy_symbol: acnususd}
+  - {ticker: ADBE,  name: Adobe Inc.,                     sector: Information Technology, dukascopy_symbol: adbeususd}
+
+  - {ticker: TJX,   name: TJX Companies,                  sector: Consumer Discretionary, dukascopy_symbol: tjxususd}
+  - {ticker: TGT,   name: Target Corporation,             sector: Consumer Discretionary, dukascopy_symbol: tgtususd}
+  - {ticker: CMG,   name: Chipotle Mexican Grill,         sector: Consumer Discretionary, dukascopy_symbol: cmgususd}
+  - {ticker: ORLY,  name: O'Reilly Automotive,            sector: Consumer Discretionary, dukascopy_symbol: orlyususd}
+  - {ticker: AZO,   name: AutoZone,                       sector: Consumer Discretionary, dukascopy_symbol: azoususd}
+
+  - {ticker: GOOG,  name: Alphabet Inc. Class C,          sector: Communication Services, dukascopy_symbol: googususd}
+  - {ticker: T,     name: AT&T Inc.,                      sector: Communication Services, dukascopy_symbol: tususd}
+  - {ticker: TMUS,  name: T-Mobile US,                    sector: Communication Services, dukascopy_symbol: tmususd}
+
+  - {ticker: SPGI,  name: S&P Global,                     sector: Financials, dukascopy_symbol: spgiususd}
+  - {ticker: BLK,   name: BlackRock Inc.,                 sector: Financials, dukascopy_symbol: blkususd}
+  - {ticker: C,     name: Citigroup Inc.,                 sector: Financials, dukascopy_symbol: cususd}
+  - {ticker: SCHW,  name: Charles Schwab,                 sector: Financials, dukascopy_symbol: schwususd}
+  - {ticker: CB,    name: Chubb Limited,                  sector: Financials, dukascopy_symbol: cbususd}
+
+  - {ticker: DHR,   name: Danaher Corporation,            sector: Health Care, dukascopy_symbol: dhrususd}
+  - {ticker: ISRG,  name: Intuitive Surgical,             sector: Health Care, dukascopy_symbol: isrgususd}
+  - {ticker: AMGN,  name: Amgen Inc.,                     sector: Health Care, dukascopy_symbol: amgnususd}
+  - {ticker: GILD,  name: Gilead Sciences,                sector: Health Care, dukascopy_symbol: gildususd}
+  - {ticker: MDT,   name: Medtronic plc,                  sector: Health Care, dukascopy_symbol: mdtususd}
+  - {ticker: SYK,   name: Stryker Corporation,            sector: Health Care, dukascopy_symbol: sykususd}
+
+  - {ticker: EOG,   name: EOG Resources,                  sector: Energy, dukascopy_symbol: eogususd}
+  - {ticker: PSX,   name: Phillips 66,                    sector: Energy, dukascopy_symbol: psxususd}
+  - {ticker: MPC,   name: Marathon Petroleum,             sector: Energy, dukascopy_symbol: mpcususd}
+
+  - {ticker: MDLZ,  name: Mondelez International,         sector: Consumer Staples, dukascopy_symbol: mdlzususd}
+  - {ticker: CL,    name: Colgate-Palmolive,              sector: Consumer Staples, dukascopy_symbol: clususd}
+  - {ticker: EL,    name: Estee Lauder,                   sector: Consumer Staples, dukascopy_symbol: elususd}
+
+  - {ticker: ECL,   name: Ecolab Inc.,                    sector: Materials, dukascopy_symbol: eclususd}
+  - {ticker: FCX,   name: Freeport-McMoRan,               sector: Materials, dukascopy_symbol: fcxususd}
+  - {ticker: NEM,   name: Newmont Corporation,            sector: Materials, dukascopy_symbol: nemususd}
+
+  - {ticker: DE,    name: Deere & Co.,                    sector: Industrials, dukascopy_symbol: deususd}
+  - {ticker: BA,    name: Boeing Co.,                     sector: Industrials, dukascopy_symbol: baususd}
+  - {ticker: LMT,   name: Lockheed Martin,                sector: Industrials, dukascopy_symbol: lmtususd}
+  - {ticker: ETN,   name: Eaton Corporation,              sector: Industrials, dukascopy_symbol: etnususd}
+  - {ticker: MMM,   name: 3M Company,                     sector: Industrials, dukascopy_symbol: mmmususd}
+
+  - {ticker: EQIX,  name: Equinix Inc.,                   sector: Real Estate, dukascopy_symbol: equxususd}
+  - {ticker: CCI,   name: Crown Castle,                   sector: Real Estate, dukascopy_symbol: cciususd}
+  - {ticker: O,     name: Realty Income,                  sector: Real Estate, dukascopy_symbol: oususd}
+
+  - {ticker: SO,    name: Southern Company,               sector: Utilities, dukascopy_symbol: soususd}
+  - {ticker: AEP,   name: American Electric Power,        sector: Utilities, dukascopy_symbol: aepususd}
+  - {ticker: EXC,   name: Exelon Corporation,             sector: Utilities, dukascopy_symbol: excususd}
+
+benchmark:
+  ticker: SPY
+  name: SPDR S&P 500 ETF Trust
+  sector: Benchmark
+  dukascopy_symbol: spyususd

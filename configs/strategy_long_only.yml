@@ -1,0 +1,85 @@
+backtest:
+  initial_capital: 10000
+  trading_days: 252
+  start_date: null
+  end_date: null
+  use_adjusted_close: true
+  allow_missing_data: true
+
+strategy:
+  name: long_only_stock_momentum_v2
+  benchmark: SPY
+  formation_lookback: 252
+  skip_recent_days: 21
+  six_month_lookback: 126
+  intermediate_start: 252
+  intermediate_end: 126
+  short_lookback: 63
+  reversal_lookback: 21
+  residual_beta_lookback: 252
+  component_weights:
+    momentum_12_1: 0.24
+    intermediate_12_7: 0.16
+    momentum_6_1: 0.14
+    residual_12_1: 0.16
+    relative_strength_12_1: 0.12
+    information_ratio_6_1: 0.08
+    time_series_3m: 0.05
+    breakout_252: 0.03
+    downside_quality: 0.02
+    short_reversal_1m: 0.00
+  long_short: false
+  top_quantile: 0.25
+  bottom_quantile: 0.25
+  score_method: zscore
+  zscore_clip: 3.0
+  signal_clip: 1.0
+  sector_neutralize: false
+  trend_filter:
+    enabled: true
+    fast_ma: 50
+    slow_ma: 200
+    disagreement_multiplier: 0.25
+    agreement_multiplier: 1.10
+  liquidity_filter:
+    enabled: true
+    min_price: 5.0
+    volume_lookback: 20
+    min_average_volume: 100000
+    allow_zero_volume_for_large_caps: true
+
+portfolio:
+  mode: long_only
+  target_vol: 0.16
+  vol_lookback: 63
+  cov_lookback: 126
+  covariance_shrinkage: 0.50
+  max_gross_leverage: 1.00
+  max_net_exposure: 1.00
+  max_weight_per_stock: 0.10
+  max_sector_weight: 0.50
+  min_abs_weight: 0.002
+  rebalance_frequency: ME
+  turnover_aversion: 0.15
+  beta_neutral_lookback: 126
+  market_regime_filter:
+    enabled: true
+    benchmark: SPY
+    sma: 200
+    risk_off_gross_multiplier: 0.60
+    high_vol_lookback: 63
+    high_vol_threshold: 0.30
+    high_vol_multiplier: 0.75
+  drawdown_brake:
+    enabled: true
+    soft_drawdown: -0.12
+    hard_drawdown: -0.22
+    soft_multiplier: 0.70
+    hard_multiplier: 0.35
+
+execution:
+  commission_bps: 0.50
+  default_half_spread_bps: 1.50
+  slippage_bps: 1.00
+  impact_bps_per_100pct_turnover: 0.25
+  volatility_slippage_multiplier: 0.00

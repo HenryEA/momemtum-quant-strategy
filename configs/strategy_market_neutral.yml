@@ -1,0 +1,91 @@
+backtest:
+  initial_capital: 10000
+  trading_days: 252
+  start_date: null
+  end_date: null
+  use_adjusted_close: true
+  allow_missing_data: true
+
+strategy:
+  name: residual_market_neutral_momentum_diagnostic
+  benchmark: SPY
+  formation_lookback: 252
+  skip_recent_days: 21
+  six_month_lookback: 126
+  intermediate_start: 252
+  intermediate_end: 126
+  short_lookback: 63
+  reversal_lookback: 21
+  residual_beta_lookback: 252
+  component_weights:
+    momentum_12_1: 0.16
+    intermediate_12_7: 0.16
+    momentum_6_1: 0.08
+    residual_12_1: 0.38
+    relative_strength_12_1: 0.10
+    information_ratio_6_1: 0.06
+    time_series_3m: 0.03
+    breakout_252: 0.01
+    downside_quality: 0.01
+    short_reversal_1m: 0.01
+  long_short: true
+  top_quantile: 0.25
+  bottom_quantile: 0.25
+  score_method: zscore
+  zscore_clip: 3.0
+  signal_clip: 1.0
+  sector_neutralize: true
+  cross_sectional_demean: true
+  trend_filter:
+    enabled: true
+    fast_ma: 50
+    slow_ma: 200
+    disagreement_multiplier: 0.50
+    agreement_multiplier: 1.00
+  liquidity_filter:
+    enabled: true
+    min_price: 5.0
+    volume_lookback: 20
+    min_average_volume: 100000
+    allow_zero_volume_for_large_caps: true
+
+portfolio:
+  mode: long_short_beta_neutral
+  target_vol: 0.12
+  vol_lookback: 63
+  cov_lookback: 126
+  covariance_shrinkage: 0.50
+  max_gross_leverage: 1.25
+  max_net_exposure: 0.10
+  max_weight_per_stock: 0.08
+  max_sector_weight: 0.30
+  min_abs_weight: 0.002
+  rebalance_frequency: ME
+  turnover_aversion: 0.20
+  beta_neutral_lookback: 126
+  market_regime_filter:
+    enabled: true
+    benchmark: SPY
+    sma: 200
+    risk_off_gross_multiplier: 0.70
+    high_vol_lookback: 63
+    high_vol_threshold: 0.30
+    high_vol_multiplier: 0.75
+    panic_lookback: 63
+    panic_drawdown_threshold: -0.12
+    rebound_lookback: 21
+    rebound_threshold: 0.08
+    panic_rebound_short_multiplier: 0.20
+  drawdown_brake:
+    enabled: true
+    soft_drawdown: -0.10
+    hard_drawdown: -0.18
+    soft_multiplier: 0.65
+    hard_multiplier: 0.30
+
+execution:
+  commission_bps: 0.50
+  default_half_spread_bps: 1.50
+  slippage_bps: 1.00
+  impact_bps_per_100pct_turnover: 0.25
+  volatility_slippage_multiplier: 0.00
